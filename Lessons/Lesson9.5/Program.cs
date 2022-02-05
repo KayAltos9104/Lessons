@@ -13,6 +13,8 @@ namespace Lesson9._5
             m.Add(w);
             m.Add(s);
 
+            
+
             foreach (var a in m)
             {
                 a.Move();

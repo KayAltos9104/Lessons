@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Lesson9._5
 {
     class Sheep: IMovable
-    {
+    {        
         public void Move()
         {
             Console.WriteLine("Овца идет");
