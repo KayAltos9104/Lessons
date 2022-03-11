@@ -85,10 +85,10 @@ namespace Lesson12
 
         private void CursorMove (object sender, MouseEventArgs e)
         {
-            //ClearCursor();
+            ClearCursor();
             _cursorPos.X = e.Location.X;
             _cursorPos.Y = e.Location.Y;
-            //CursorVis();
+            CursorVis();
         }
 
         private void CursorClick(object sender, MouseEventArgs e)
