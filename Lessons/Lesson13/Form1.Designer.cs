@@ -47,10 +47,14 @@ namespace Lesson13
             // 
             // PbxField
             // 
+            this.PbxField.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PbxField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PbxField.Location = new System.Drawing.Point(147, 12);
             this.PbxField.Name = "PbxField";
             this.PbxField.Size = new System.Drawing.Size(641, 592);
+            this.PbxField.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbxField.TabIndex = 1;
             this.PbxField.TabStop = false;
             // 

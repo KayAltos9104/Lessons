@@ -25,14 +25,29 @@ namespace Lesson13
         {
             foreach (var r in rocketsList)
             {
-                if ((r.X-this.X)* (r.X - this.X) + (r.Y - this.Y)*(r.Y - this.Y)<=(this._detectRad* this._detectRad))
+                double distanceCurr = Math.Sqrt((r.X - this.X) * (r.X - this.X) + (r.Y - this.Y) * (r.Y - this.Y));
+                if (distanceCurr <= this._detectRad)
                 {
-                    double angleTan = (r.X - this.X) / (r.Y - this.Y);
-                    double angle = Math.Atan(angleTan);
+                    //double angleTan = (r.X - this.X) / (r.Y - this.Y);
+                    //double angle = Math.Atan(angleTan);
+                    //double velocity = Math.Sqrt(_velX * _velX + _velY * _velY);
+                    //_velX = velocity * Math.Cos(angle);
+                    //_velY = velocity * Math.Sin(angle);                    
+                    //X += _velX;
+                    //Y += _velY;
+                    //(angle / 180) * Math.PI
+                    double distanceNew = distanceCurr;
+                    double angle = 0;
                     double velocity = Math.Sqrt(_velX * _velX + _velY * _velY);
-                    _velX = velocity * Math.Cos(angle);
-                    _velY = velocity * Math.Sin(angle);
-
+                    while (distanceNew>=distanceCurr)
+                    {
+                        _velX = velocity * Math.Cos((angle / 180) * Math.PI);
+                        _velY = velocity * Math.Sin((angle / 180) * Math.PI);
+                        distanceNew = Math.Sqrt((r.X - (this.X+ _velX)) * (r.X - (this.X + _velX)) + (r.Y - (this.Y+_velY)) * 
+                            (r.Y - (this.Y + _velY)));
+                        angle += 1;
+                    }
+                    break;
                 }
             }
         }
